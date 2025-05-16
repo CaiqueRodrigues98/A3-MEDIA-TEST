@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import { Astro } from 'astro';
+
+const { numero } = Astro.params;
+const pagina = await getCollection('paginatemplate2');
+const conteudo = pagina.find(p => String(p.data.numero) === String(numero));
+---
+
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Página Template 2 - {numero}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/assets/template2.css" />
+  </head>
+  <body>
+    <h1>Página Template 2 - {numero}</h1>
+    {conteudo ? <p>{conteudo.data.conteudo}</p> : <p>Página não encontrada.</p>}
+  </body>
+</html>

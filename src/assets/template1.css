@@ -1,0 +1,20 @@
+/* Import as fontes no HTML, não no CSS. Coloque apenas CSS aqui. */
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+}
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+.markdown-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+.markdown-content p:last-child {
+  margin-bottom: 0;
+}

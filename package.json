@@ -3,12 +3,18 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
+    "dev": "tinacms dev -c \"astro dev\"",
+    "build": "tinacms build -c \"astro build\"",
+    "preview": "tinacms preview -c \"astro preview\"",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.7.13"
+    "@faker-js/faker": "^9.8.0",
+    "@tinacms/cli": "^1.9.7",
+    "astro": "^5.7.13",
+    "tinacms": "^2.7.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.18"
   }
 }

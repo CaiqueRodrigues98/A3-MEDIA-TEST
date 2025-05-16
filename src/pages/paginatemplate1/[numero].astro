@@ -1,0 +1,62 @@
+---
+import { Astro } from 'astro';
+
+const { numero } = Astro.params;
+let conteudo = null;
+try {
+  conteudo = await import(`../../../content/paginatemplate1/${numero}.json`).then(m => m.default);
+} catch (e) {
+  conteudo = null;
+}
+---
+
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Página Template 1 - {numero}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/assets/template1.css" />
+  </head>
+  <body>
+    <main class="flex-1">
+      <div class="max-w-3xl mx-auto px-4 py-8 text-center">
+        <div class="text-sm mb-1">Advertisement</div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Try This Easy Evening Trick for Prostate Comfort</h1>
+        <a href="https://fun.pulseytfun.com/preclick" class="mb-6 border border-gray-300 rounded-md overflow-hidden">
+          <div class="relative aspect-video mb-6">
+            <img src="/presellimage.gif" alt="Video placeholder" class="w-full" />
+          </div>
+        </a>
+        <a href="https://fun.pulseytfun.com/preclick" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-md mb-8">Click Here to Watch The Video</a>
+        <div class="text-left mb-8 markdown-content">
+          {conteudo ? <p>{conteudo.conteudo}</p> : <p>Página não encontrada.</p>}
+        </div>
+        <a href="https://fun.pulseytfun.com/preclick" id="watch" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-md mb-8">Click Here to Watch The Video</a>
+      </div>
+      <div class="bg-gray-100 py-8">
+        <div class="max-w-3xl mx-auto px-4 text-center text-sm opacity-80">
+          <p class="mb-4">Copyright 2025 by getflowempower.com. All rights reserved.</p>
+          <p class="mb-4">This site is not a part of the Youtube website or Youtube Inc. Additionally, This site is NOT endorsed by Youtube in any way. YOUTUBE is a trademark of YOUTUBE, Inc.</p>
+          <p class="mb-4">FDA Compliance</p>
+          <p class="mb-4">The information on this website has not been evaluated by the Food & Drug Administration or any other medical body. We do not aim to diagnose, treat, cure or prevent any illness or disease. Information is shared for educational purposes only. You should always consult your doctor before acting on any content on this website, especially if you are pregnant, nursing, taking medication or have a medical condition.</p>
+          <p class="mb-4">Results May Vary: the weight loss results testimonials are in no way a guarantee of results. Individual weight loss results, including amount and time, will vary. Whether genetic or environmental, it should be noted that food intake, rates of metabolism and levels of exercise and physical exertion vary from person to person. This means weight loss results will also vary from person to person.</p>
+          <p class="mb-4">Some names and personal identifying information on this site have been changed to protect the privacy of individuals. No individual result should be seen as typical.</p>
+          <p class="mb-4">Marketing Disclosure: This website is a market place. As such you should know that the owner has a monetary connection to the product and services advertised on the site. The owner receives payment whenever a qualified lead is referred but that is the extent of it.</p>
+          <p class="mb-4">Advertising Disclosure: This website and the products & services referred to on the site are advertising marketplaces. This website is an advertisement and not a news publication. Any photographs of persons used on this site are models. The owner of this site and of the products and services referred to on this site only provides a service where consumers can obtain and compare.</p>
+        </div>
+      </div>
+    </main>
+    <footer class="border-t border-gray-200 py-4">
+      <div class="max-w-3xl mx-auto px-4">
+        <div class="flex flex-wrap justify-center items-center gap-4">
+          <a href="/shipping" class="text-gray-600 hover:text-gray-900">Shipping</a>
+          <a href="/contact" class="text-gray-600 hover:text-gray-900">Contact</a>
+          <a href="/privacy-policy" class="text-gray-600 hover:text-gray-900">Privacy Policy</a>
+          <a href="/terms-of-service" class="text-gray-600 hover:text-gray-900">Terms Of Service</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
